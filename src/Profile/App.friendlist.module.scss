@@ -1,0 +1,164 @@
+@use '../theme';
+
+.listPage
+{
+    
+    background-color:rgba(21, 22, 29);
+    border-radius: 4px;
+    margin: 45px 20px 10px 20px;
+    flex: 1;
+  
+    border: 1px solid theme.$dimmedColor !important;
+    
+    overflow: hidden;
+
+    position: relative;
+    z-index: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+
+}   
+
+/* Общая полоса прокрутки */
+::-webkit-scrollbar {
+    width: 12px; /* Ширина вертикальной полосы */
+    height: 12px; /* Высота горизонтальной полосы */
+  }
+  
+  /* Ползунок (сам элемент прокрутки) */
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(31, 32, 43); /* Цвет ползунка */
+  
+  
+  }
+  
+  /* Фон полосы прокрутки */
+  ::-webkit-scrollbar-track {
+    background: rgb(16, 17, 22); /* Цвет трека */
+    box-shadow: inset -2px 0 10px rgba(0,0,0,0.5);
+    
+  }
+  
+.pageSelectors
+{
+    display: flex;
+ 
+    margin: -35px auto 0 auto;
+    height: fit-content;
+    width: 90%;
+}
+.pageSelector
+{
+    position: relative;
+    z-index: 0;
+    display: flex;
+
+    font-size: 1em;
+    transform: translateY( calc(150% - 3px));
+
+    padding: 5px 15px;
+    background-color:rgba(21, 22, 29);
+    filter: brightness(0.8);
+    
+    margin: 0 8px;
+
+    border: 0 !important;
+
+    border-radius: 8px 8px 0px 0px !important;
+    border: 1px solid theme.$dimmedColor !important;
+ 
+}
+.active
+{
+    z-index: 1;
+    position: relative;
+    border-bottom: 1px solid transparent !important;
+    transform: translateY(calc(150% - 3px));
+    filter: brightness(1);
+    background-color:rgba(21, 22, 29) !important;
+    color: theme.$outlineColor !important;
+
+}
+
+#GapButton
+{
+    margin-left: auto;
+}
+
+.profileCard
+{
+    display: flex;
+    min-width: calc(50% - 16px);
+    
+    margin: 0 8px 8px 8px;
+    background-color: theme.$backsideColor;
+    border-radius: 8px;
+    
+}
+.profileCard:hover{
+    background-color: theme.$mainColor;
+}
+.profileCardBlock
+{
+
+    flex: 1;
+}
+.profileAvatar
+{
+    border: 1px solid theme.$outlineColor;
+    aspect-ratio: 1;
+    flex: 0.25;
+    margin: 8px;
+    border-radius: 5px;
+}
+.profileList
+{
+
+    overflow-y: scroll;
+    width: calc(100% - 10px);
+    margin: 0px auto auto 8px;
+    padding-left: 4px;
+  
+
+    position: relative;
+    z-index: 1;
+    padding-top: 5px;
+
+    height: fit-content;
+    
+    display: flex;
+
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    
+    flex-wrap: wrap;
+
+
+}
+
+.search
+{
+    width: 95%;
+    min-height: 40px !important;
+    margin: 15px auto 15px auto !important;
+}
+
+.friendSinceInfo
+{
+    font-size: 0.8em;
+}
+.profileCardUsername
+{
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 6px;
+}
+.profileCardOnlineStatus
+{
+    font-size: 0.8em;
+    color: theme.$dimmedColor !important;
+}

@@ -1,0 +1,294 @@
+@use '../theme';
+
+.Profile {
+    width:100%;
+
+    display: flex;
+    margin: 6px;
+    
+}
+
+
+.profilePanel
+{
+    overflow: hidden;
+    width: 25%;
+    height: 100%;
+
+    background-color: rgba(26, 27, 36,1);
+    border-radius: 5px;
+    margin-right: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.avatarSection
+{
+margin: 0px auto;
+width: 90%;
+
+border-radius: 5px;
+
+}
+
+.username
+{
+    
+    margin: auto;
+    font-size: 1.2em;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+    text-align: center;
+
+}
+.profileContent
+{
+    position: relative;
+    flex: 1;
+    height: 100%;
+    background-color: theme.$backsideColor;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+
+
+}
+.profileAvatar
+{
+    margin: 10px 0;
+    pointer-events: none;
+
+    border-radius: 5px;
+   
+    aspect-ratio: 1;
+
+    background-color: theme.$dimmedColor;
+
+
+    background-image: url("../../public/user.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.menu
+{
+    width: 90%;
+    margin: 0 auto 20px auto;
+    
+}
+.button
+{
+    background-color: transparent;
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    padding: 0 4px;
+
+}
+.accentButton
+{
+  border: 1px solid transparent !important;
+
+  width: 100% ;
+  height: 40px;
+
+
+  margin: 10px auto 0px auto;
+  background-color: theme.$accentColor !important;
+
+}
+.accentButton:hover{
+  filter: brightness(1.1);
+  color: theme.$outlineColor !important;
+}
+
+
+
+.skinScene
+{
+   width: 100%;
+    aspect-ratio: 0.65;
+    background-color: rgba(theme.$dimmedColor, 0.1);
+
+    box-shadow: inset 0 0 2px rgba(0,0,0,0.8);
+    border-radius: 5px;
+  
+}
+#editSkinButton
+{
+    margin: 0 !important;
+    font-size: 1em;
+    width: 25%;
+}
+.skinViewer
+{
+    width: 25%;
+}
+.profileInfo
+{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    background-color: theme.$backsideColor;
+    
+    margin: 10px auto 10px auto;
+    
+    font-size: 1.2em;
+}
+.mainInfo
+{
+    background-color:rgba(26, 27, 36,0.4);
+    border-radius: 8px;
+    flex: 1;
+    margin-right: 20px;
+    padding: 5px 15px;
+    font-size: 1.1em;
+
+}
+.editMenu
+{
+    
+    display: flex;
+
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+    flex-wrap: wrap;
+
+    height: fit-content;
+ 
+    margin: 10px 20px;
+
+}
+.editMenu button{
+    
+    font-size: 1em;
+    width: calc(20% - 25px);
+    margin: 0;
+   
+    font-size: 0.8em;
+   
+}
+
+.dimmed
+{
+    margin: auto;
+    text-align: center;
+    font-size: 14px;
+    color: theme.$dimmedColor;
+}
+
+.quote
+{
+    margin: 2px auto 2px auto;
+    width: calc(100% - 50px);
+    background-color: rgba(black,0.3);
+    
+    border-radius: 5px;
+    font-style: italic;
+    text-align: center;
+    font-size: 0.9em;
+    padding: 5px 5px;
+    text-overflow: ellipsis;
+}
+
+.Rewards
+{
+    display: flex;
+    flex-wrap: wrap;
+    
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: self-start;
+    width: 100%;
+   height: fit-content;
+}
+.another {
+    color: rgba(theme.$dimmedColor, 1);
+
+    overflow-y: scroll;
+    display: flex;
+    flex: 1;
+    background-color:rgba(26, 27, 36,0.4);
+    border-radius: 8px;
+    margin: 5px 20px 20px 20px;
+
+    justify-content: center;
+}
+.item 
+{
+    
+    background-color: theme.$backsideColor;
+    width: calc(25% - 20px);
+    margin: 10px 10px;
+    border-radius: 8px;
+    aspect-ratio: 0.9;
+}
+.itemImage
+{
+    image-rendering: pixelated;
+    pointer-events: none;
+
+    background-image: url("pickaxe.png");
+    background-size: cover;
+    background-position: center;
+    background-size: cover;
+    
+    height: 50%;
+    width: 50%;
+    margin: 8px auto;
+    border-radius: 5px;
+   
+}
+.itemDescription
+{
+    width: 100%;
+    height: 20%;
+    
+}
+
+.formShadow
+{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+
+    background-color: rgba(0,0,0,0.7); 
+    width: 100%;
+    height: 100%; 
+}
+.form
+{
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    
+    width: 40%;
+    height: fit-content;
+    
+    padding: 20px;
+    border: 1px solid theme.$outlineColor;
+    border-radius: 8px;
+    background-color: theme.$backsideColor;
+    
+}
+.formButtons
+{
+    
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+.formButtons button{
+    width: calc(50% - 5px);
+    margin: 0;
+}

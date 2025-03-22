@@ -1,0 +1,436 @@
+@use 'theme';
+$tooltipColor: rgb(216, 216, 216);
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+}
+
+.contentSide
+{
+  background-image: url('meadow.png');
+
+  background-color: rgb(19, 19, 26);
+  background-size: contain;
+  background-position: center;
+  background-size: cover;
+
+  width: 75vw;
+  height: 100vh;
+
+  transition: filter 0.5s;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.logo
+{
+  width: 90%;
+
+  image-rendering: pixelated;
+  pointer-events: none;
+}
+.brandBlock
+{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.sidePanel h1{
+  margin-bottom: 10px;
+  margin-top: 0;
+
+  font-size: 3.2em;
+  line-height: 1.1;
+
+
+}
+
+.sidePanel
+{
+  flex: 1;
+ 
+  background-color: theme.$mainColor;
+
+  display: flex;
+
+
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+
+  user-select: none;
+  position: relative;
+  
+} 
+
+.buttonsBlock
+{
+  width: 90%;
+  
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 20px;
+}
+
+
+
+.buttonsBlock button{
+  margin-bottom: 10px;
+  height: 70px;
+}
+.buttonsBlock button{
+  background-color: transparent;
+  border: 1px solid theme.$outlineColor;
+  transition: background-color 0.25s;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+
+button {
+  border-radius: 8px;
+  border: 1px solid theme.$outlineColor !important;
+
+  font-size: 1.2em;
+  font-weight: 500;
+  font-family: inherit;
+
+  cursor: pointer;
+  
+}
+
+.buttonsBlock #join:hover{
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  
+}
+button:not(.accentButton):hover {
+  background-color: rgba(240,255,255,240);
+  color: black;
+}
+
+
+a{
+  color: theme.$dimmedColor;
+}
+
+
+.checkboxAndLabel
+{
+  display: flex;
+  margin-top: 10px;
+}
+.checkbox{
+  margin-right: 5px;
+}
+
+.inputFields
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  margin: 10px 20px auto 20px;
+ 
+}
+.inputFields .textAsButton{
+  margin-top: 5px;
+  color: theme.$dimmedColor;
+  text-decoration: underline;
+
+  transition: color 0.1s;
+}
+.textAsButton:hover{
+  color: theme.$outlineColor;
+}
+
+.accentButton
+{
+  border: 1px solid transparent !important;
+
+  width: 100% !important;
+  padding: 15px 0;
+
+  margin: 10px auto 10px auto !important;
+  background-color: theme.$accentColor !important;
+
+}
+.accentButton:hover{
+  filter: brightness(1.1);
+  color: theme.$outlineColor;
+}
+#join:hover{
+  transform: translateY(-2px);
+}
+
+.authForm
+{
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+
+
+
+.regForm
+{
+  width: 100%;
+  margin-bottom: 20px;
+  height: fit-content;
+  
+  position: relative;
+}
+
+
+.finePrint
+{
+  color: theme.$dimmedColor;
+}
+
+
+input[type="text"], input[type="password"]
+{
+
+  border: 2px solid theme.$outlineColor;
+  border-radius: 4px;
+
+  height: 40px;
+  margin-top: 8px;
+
+  text-indent: 10px;
+
+  outline:none;
+}
+
+.InputWrapper input
+{
+  
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  outline:none;
+  text-indent: 10px;
+}
+
+
+.InputWrapper
+{
+  position: relative;
+  border: 2px solid theme.$outlineColor;
+  border-radius: 4px;
+
+  height: 40px;
+
+  margin-top: 8px;
+  
+  display: flex;
+  flex-direction: row;
+}
+.InputWrapper .InputIndicator
+{
+  position: absolute;
+  left: calc(100% - 15px);
+  top: 50%;
+  transform: translate(-50%,-75%);
+
+  width: 15px;
+  height: 15px;
+}
+
+.InputCorrect
+{
+  @extend .InputIndicator;
+  text-shadow: 0px 0px 15px rgb(0, 255, 0);
+  color:rgb(0, 255, 0);
+}
+.InputIncorrect
+{
+  @extend .InputIndicator;
+  text-shadow: 0px 0px 15px rgb(255, 0, 0);
+  color:rgb(255, 0, 0);
+}
+
+.Tooltip {
+  margin-right: 30px;
+  position: absolute;
+
+  right: 0%;
+  top: 50%;
+  transform: translate(0, calc(-50% - 10px));
+  background-color: $tooltipColor;
+  color: black;
+  font-weight: 600;
+  border-radius: 8px;
+
+  overflow: hidden;                  /* Скрывает всё, что выходит за пределы */
+  max-width: 0;  
+
+  z-index: 1000;
+
+  display: -webkit-box;             /* Включаем гибкий контейнер для текста */
+  -webkit-line-clamp: 4;           /* Обрезаем текст после двух строк */
+  -webkit-box-orient: vertical;    /* Устанавливаем вертикальную ориентацию */
+
+  white-space: normal;
+  border: 0;
+  opacity: 0.95;
+}
+
+.Tooltip p{
+
+  padding: 4px;
+}
+.Tooltip.visible {
+  max-width: 420%;
+}
+
+.sidePanelNavigation
+{
+  width: 90%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  
+}
+.Navigation
+{
+
+display: flex;
+
+flex-direction: row;
+justify-content: space-between;
+align-items: flex-start;
+
+flex-wrap: wrap;
+width: 100%;
+
+
+height: fit-content;
+
+}
+.navButton
+{
+  
+  width: calc(50% - 4px);
+  background-color: transparent;
+  margin-bottom: 8px;
+  height: 60px;
+  
+}
+
+
+
+
+/* Общая полоса прокрутки */
+::-webkit-scrollbar {
+  width: 12px; /* Ширина вертикальной полосы */
+  height: 12px; /* Высота горизонтальной полосы */
+}
+
+/* Ползунок (сам элемент прокрутки) */
+::-webkit-scrollbar-thumb {
+  background-color: rgb(31, 32, 43); /* Цвет ползунка */
+
+
+}
+
+/* Фон полосы прокрутки */
+::-webkit-scrollbar-track {
+  background: rgb(25, 26, 35); /* Цвет трека */
+  box-shadow: inset -2px 0 10px rgba(0,0,0,0.5);
+  
+}
+
+.NotFound
+{
+  font-family: 'Oswald', sans-serif;
+
+  width: 100%;
+  height: 100%;
+  background-color: theme.$deeperBacksideColor;
+
+  color: theme.$dimmedColor;
+  font-size: 4em;
+  font-weight: bolder;
+
+
+  box-shadow: inset 0px 0px 5px rgba(0,0,0,0.5);
+}
+
+.NotFound div
+{
+  margin-top: 10%;
+  text-align: center;
+}
+
+.pageController
+{
+
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: 5px auto;
+
+}
+.pageControllerAccent
+{
+  margin: 2px 2px;
+  background-color: theme.$accentColor;
+  border: 1px solid transparent !important;
+  height: 30px;
+  flex: 1;
+}
+.pageControllerPage
+{
+  margin: 2px 2px;
+  min-width: 30px;
+  padding: 2px;
+  background-color: transparent;
+
+}
+.pageControllerPageEdge
+{
+  margin: 2px 6px;
+  min-width: 30px;
+  padding: 2px;
+  background-color: transparent;
+
+}
+.pageControllerPageCurrent
+{
+  margin: 2px 2px;
+  min-width: 30px;
+  padding: 2px;
+  background-color: theme.$outlineColor;
+
+  color: black;
+}

@@ -1,0 +1,210 @@
+@use '../theme';
+
+.Contentboard {
+    width: 100%;
+    height: 100%;
+
+    background-color: transparent;
+    display: flex;
+
+    backdrop-filter: blur(5px) brightness(0.3);
+}
+
+.Navigation
+{
+  width: 4%;
+  background-color: theme.$mainColor;
+  box-shadow: 0 0 2px black;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.navButton
+{
+  background-color: transparent;
+
+  font-size: 1.2em;
+  font-weight: 500;
+
+  width: 90%;
+  height: 40px;
+
+  margin: 8px 0px;
+  
+}
+
+.Article
+{
+    border: 1px solid inherit;
+    background-color: rgb(14, 14, 19, 0.5);
+
+    border-radius: 8px;
+    width: 95%;
+
+    min-height: 120px;
+    height: fit-content;
+
+    margin: 10px auto 20px auto;
+    overflow: hidden;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    max-height: 96%;
+
+
+    /*
+      Исправляет подпрыгивание элементов при прокрутке из-за stransform
+      Временное решение. Оптимизировать.
+    */
+    will-change: transform;
+
+}
+
+.Article img
+{
+    width: 100%; 
+    object-fit: cover;
+    pointer-events: none;
+}
+.articleImageContainer
+{
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+    width: auto;
+    max-height: 50%;
+   
+}
+.articleDescription
+{
+        
+    
+    flex: 1;
+    padding: 5px 10px 5px 10px;
+    color: theme.$outlineColor;
+    background-color: rgb(14, 14, 19);
+
+}
+.articleDescription p
+{
+  
+    color: theme.$dimmedColor;
+    font-size: 1em;   /* Размер шрифта */
+    line-height: 1.2; /* Минимальное расстояние между строками */
+
+    display: -webkit-box; /* Использование флексбокса для текста */
+    -webkit-box-orient: vertical; /* Вертикальная ориентация коробки */
+    -webkit-line-clamp: 3; /* Ограничиваем количество видимых строк (например, 3) */
+    overflow: hidden; /* Скрываем текст, выходящий за пределы контейнера */
+    text-overflow: ellipsis; /* Добавляем многоточие, если текст не помещается */
+
+    flex: 1;
+    
+    padding-bottom: 2px;
+    
+    margin: 0 0px;
+}
+.articlePanel
+{
+    display: flex;
+    justify-content: space-between;
+    
+    width: 100%;
+    background-color: theme.$backsideColor;
+    padding: 4px 0 8px 0;
+
+    padding-bottom: 10px;
+
+}
+.Articles
+{
+    flex: 1;
+    overflow-y: scroll;
+    user-select: none;
+}
+
+.articleActions
+{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+.articleActions button
+{
+    margin-right: 10px;
+    margin-bottom: 0;
+
+    background-color: transparent;
+    border-radius: 4px;
+
+    font-size: 1em;
+    padding: 0 4px;
+
+    height: 30px;
+
+    width: fit-content;
+
+    transition: filter 0.1s ease;
+    filter: brightness(0.5);
+}
+
+.articleActions button:hover{
+
+    filter: brightness(1);
+    background-color: transparent;
+}
+
+.articleUpvote
+{
+    color: rgb(0, 255, 0);
+    border: 1px solid rgb(0, 255, 0) !important;
+    
+}
+
+.articleDownvote
+{
+    color: rgb(255, 0, 0);
+    border: 1px solid rgb(255, 0, 0) !important;
+}
+.articleComments
+{
+    color: theme.$outlineColor;
+    border: 1px solid theme.$outlineColor !important;
+
+    background-color: theme.$outlineColor;
+
+}
+.articleInfo
+{
+    margin-left: 10px;
+    margin-bottom: 0;
+    margin-top: 5px;
+
+    color: theme.$dimmedColor;
+    filter: brightness(1.2);
+
+    white-space: nowrap; /* Запрещает перенос строки */
+    overflow: hidden; /* Скрывает текст, выходящий за пределы контейнера */
+    text-overflow: ellipsis; /* Добавляет многоточие, если текст не помещается */
+
+}
+.articleUpvote:hover
+{
+    color: rgb(0, 255, 0) !important;
+}
+
+.articleDownvote:hover
+{
+    color: rgb(255, 0, 0) !important;
+}
+
+.articleComments:hover
+{
+    color: theme.$outlineColor !important;
+}
